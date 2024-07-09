@@ -1,0 +1,33 @@
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class SeparateConsonantsAndVowels {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a word: ");
+        String inputWord = scanner.nextLine().toLowerCase(); // Convert to lowercase for case-insensitivity
+
+        Set<Character> vowels = new HashSet<>();
+        Set<Character> consonants = new HashSet<>();
+
+        for (int i = 0; i < inputWord.length(); i++) {
+            char ch = inputWord.charAt(i);
+            if (Character.isLetter(ch)) {
+                if (isVowel(ch)) {
+                    vowels.add(ch);
+                } else {
+                    consonants.add(ch);
+                }
+            }
+        }
+
+        System.out.println("Consonants: " + consonants);
+        System.out.println("Vowels: " + vowels);
+    }
+
+    public static boolean isVowel(char ch) {
+        return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u';
+    }
+}

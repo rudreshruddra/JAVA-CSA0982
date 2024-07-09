@@ -1,0 +1,27 @@
+import java.util.Arrays;
+import java.util.Collections;
+
+public class ReverseAlphabeticalOrder {
+    public static void main(String[] args) {
+        String inputWord = "MOSQUE"; // Replace with user input
+
+        // Convert the word to a character array
+        char[] charArray = inputWord.toCharArray();
+
+        // Sort the array in alphabetical order
+        Arrays.sort(charArray);
+
+        // Reverse the sorted array
+        for (int i = 0; i < charArray.length / 2; i++) {
+            char temp = charArray[i];
+            charArray[i] = charArray[charArray.length - 1 - i];
+            charArray[charArray.length - 1 - i] = temp;
+        }
+
+        // Print the result
+        System.out.print("Alphabetical Order: ");
+        for (char ch : charArray) {
+            System.out.print(ch + " ");
+        }
+    }
+}

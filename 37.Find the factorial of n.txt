@@ -1,0 +1,22 @@
+import java.util.Scanner;
+import java.math.BigInteger; // Import BigInteger for large results
+
+public class Factorial {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a positive integer (n): ");
+        int n = scanner.nextInt();
+
+        if (n < 0) {
+            System.out.println("Factorial is not defined for negative numbers.");
+        } else {
+            BigInteger factorial = BigInteger.ONE; // Initialize with 1
+
+            for (int i = 1; i <= n; i++) {
+                factorial = factorial.multiply(BigInteger.valueOf(i));
+            }
+
+            System.out.printf("%d Factorial = %s%n", n, factorial);
+        }
+    }
+}

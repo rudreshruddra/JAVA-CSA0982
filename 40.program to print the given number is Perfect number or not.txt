@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class PerfectNumberChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a positive integer: ");
+        long number = scanner.nextLong();
+
+        if (isPerfect(number, 1) == number) {
+            System.out.println("It's a Perfect Number");
+        } else {
+            System.out.println("It's not a Perfect Number");
+        }
+    }
+
+    static long isPerfect(long num, int i) {
+        if (i <= num / 2) {
+            if (num % i == 0) {
+                return i + isPerfect(num, i + 1);
+            }
+            return isPerfect(num, i + 1);
+        }
+        return 0;
+    }
+}
